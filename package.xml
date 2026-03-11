@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>kangaroo_hw_interface</name>
+  <version>0.1.0</version>
+  <description>
+    ROS2 ros2_control hardware interface plugin for the Dimension Engineering
+    Kangaroo x2 motor controller, communicating over UART (serial).
+    Exposes velocity command and velocity/position state interfaces for two wheels.
+  </description>
+  <maintainer email="moaaz@todo.todo">moaaz</maintainer>
+  <license>TODO: License declaration</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>rclcpp</depend>
+
+  <build_depend>hardware_interface</build_depend>
+  <exec_depend>hardware_interface</exec_depend>
+
+  <build_depend>pluginlib</build_depend>
+  <exec_depend>pluginlib</exec_depend>
+
+  <!-- Boost::system is used for boost::asio serial I/O -->
+  <build_depend>libboost-system-dev</build_depend>
+
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

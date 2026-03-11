@@ -1,0 +1,9 @@
+<library path="kangaroo_system">
+  <class name="kangaroo_hw_interface/KangarooSystem"
+         type="kangaroo_hw_interface::KangarooSystem"
+         base_class_type="hardware_interface::SystemInterface">
+    <description>
+      ROS2 hardware interface for Kangaroo x2 over UART
+    </description>
+  </class>
+</library>
