@@ -9,7 +9,8 @@ Tested on **ROS2 Humble**.
 ## What it does
 
 Implements `hardware_interface::SystemInterface` to expose two wheel joints:
-
+| Interface | Type | Description |
+|---|---|---|
 | `joint_wheel_fl` / `joint_wheel_fr` | `velocity` (command) | rad/s setpoint sent to Kangaroo channels 1 & 2 |
 | `joint_wheel_fl` / `joint_wheel_fr` | `velocity` (state) | rad/s feedback read from Kangaroo |
 | `joint_wheel_fl` / `joint_wheel_fr` | `position` (state) | rad accumulated position read from Kangaroo |
@@ -23,6 +24,7 @@ The states are based on motor encoder reading and they're translated into the **
 Configured in the `<hardware>` block of your `ros2_control` URDF:
 
 | Parameter | Type | Example | Description |
+|---|---|---|---|
 | `serial_port` | string | `/dev/ttyTHS1` | Serial device connected to Kangaroo TX/RX |
 | `baudrate` | int | `9600` | Must match software configuration |
 
@@ -33,6 +35,7 @@ Configured in the `<hardware>` block of your `ros2_control` URDF:
 Defined at the top of `src/kangaroo_system.cpp` — adjust for your drivetrain:
 
 | Constant | Value | Description |
+|---|---|---|
 | `GEAR_RATIO` | 51.0 | Motor-to-wheel gear reduction |
 | `PPR` | 12.0 | Encoder pulses per motor revolution |
 | `TPP` | 4.0 | Ticks per pulse (quadrature) — currently unused, reserved |
